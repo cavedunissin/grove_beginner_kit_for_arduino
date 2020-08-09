@@ -6,7 +6,8 @@ void setup() {
   pinMode(soundPin, INPUT);
   Serial.begin(9600);
 }
-void loop(){
+
+void loop() {
   int soundState = analogRead(soundPin); // Read sound sensor’s value
   Serial.println(soundState);
   // if the sound sensor’s value is greater than 600, the light will be on for 0.1 seconds.
@@ -14,7 +15,8 @@ void loop(){
   if (soundState > 600) {
     digitalWrite(ledPin, HIGH);
     delay(100);
-  }else{
+  } else {
     digitalWrite(ledPin, LOW);
+    delay(100);
   }
 }

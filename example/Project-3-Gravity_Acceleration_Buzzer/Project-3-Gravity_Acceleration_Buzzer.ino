@@ -27,6 +27,7 @@ void setup() {
   delay(100);
   LIS.setOutputDataRate(LIS3DHTR_DATARATE_50HZ);
 }
+
 void loop() {
   buttonState = digitalRead(buttonPin);
   if (!LIS) {
@@ -34,7 +35,7 @@ void loop() {
     while (1);
     return;
   }
-  //3 axis
+  //read and display accel sensor 3-axis data
   Serial.print("x:");
   Serial.print(LIS.getAccelerationX());
   Serial.print("  ");
@@ -54,20 +55,14 @@ void loop() {
     buttonPushCounter++;
     // button++:
   }
-
   if (buttonPushCounter >= 3) {
-    // turn BUZZE off:
-    noTone(5);
+    noTone(5);    // turn BUZZER off:
   }
-
   else if ( ax > 0.25 || ay > 0.25 || ax < -0.25 || ay < -0.25 ) {
-    // turn BUZZE on:
-    tone(5, 1000, 1000);
+    tone(5, 1000, 1000); // turn BUZZER on:
     digitalWrite(ledPin, HIGH);
     delay(1000);
     digitalWrite(ledPin, LOW);
     delay(1000);
   }
-
-
 }

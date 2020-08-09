@@ -2,11 +2,13 @@
 int soundPin = A2; // Analog sound sensor is to be attached to analog
 int lightPin = A6; //Analog light sensor is to be attached to analog
 int ledPin = 4; // Digital LED is to be attached to digital
+
 void setup() {
   pinMode(ledPin, OUTPUT);
   pinMode(lightPin, INPUT);
   pinMode(soundPin, INPUT);
 }
+
 void loop() {
   int soundState = analogRead(soundPin); // Read sound sensor’s value
   int lightState = analogRead(lightPin); // Read light sensor’s value
