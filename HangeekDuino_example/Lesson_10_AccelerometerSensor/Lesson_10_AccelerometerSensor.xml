@@ -1,0 +1,104 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1712" x="-62" y="63">
+    <next>
+      <block type="initializes_loop" id="1713">
+        <statement name="CONTENT">
+          <block type="serial_print" id="1714" inline="false">
+            <value name="CONTENT">
+              <block type="text" id="1715">
+                <field name="TEXT">X:</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_print" id="1716" inline="false">
+                <value name="CONTENT">
+                  <block type="accelRead" id="1765" inline="true">
+                    <field name="mode">X</field>
+                    <value name="pin">
+                      <block type="math_number" id="1766">
+                        <field name="NUM">0x19</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_print" id="1719" inline="false">
+                    <value name="CONTENT">
+                      <block type="text" id="1720">
+                        <field name="TEXT"> </field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_print" id="1747" inline="false">
+                        <value name="CONTENT">
+                          <block type="text" id="1748">
+                            <field name="TEXT">Y:</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_print" id="1767" inline="false">
+                            <value name="CONTENT">
+                              <block type="accelRead" id="1768" inline="true">
+                                <field name="mode">Y</field>
+                                <value name="pin">
+                                  <block type="math_number" id="1769">
+                                    <field name="NUM">0x19</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_print" id="1770" inline="false">
+                                <value name="CONTENT">
+                                  <block type="text" id="1771">
+                                    <field name="TEXT"> </field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="serial_print" id="1772" inline="false">
+                                    <value name="CONTENT">
+                                      <block type="text" id="1773">
+                                        <field name="TEXT">Z:</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="serial_println" id="1794" inline="false">
+                                        <value name="CONTENT">
+                                          <block type="accelRead" id="1777" inline="true">
+                                            <field name="mode">Z</field>
+                                            <value name="pin">
+                                              <block type="math_number" id="1778">
+                                                <field name="NUM">0x19</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="delay_custom" id="1807" inline="false">
+                                            <value name="DELAY_TIME">
+                                              <block type="math_number" id="1808">
+                                                <field name="NUM">1000</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

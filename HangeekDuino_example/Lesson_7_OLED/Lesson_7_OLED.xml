@@ -1,0 +1,27 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1029" x="13" y="63">
+    <next>
+      <block type="initializes_loop" id="1030">
+        <statement name="CONTENT">
+          <block type="OLED_print" id="1064" inline="true">
+            <value name="x">
+              <block type="math_number" id="1065">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="y">
+              <block type="math_number" id="1066">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="content">
+              <block type="text" id="1067">
+                <field name="TEXT">Hello World!</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

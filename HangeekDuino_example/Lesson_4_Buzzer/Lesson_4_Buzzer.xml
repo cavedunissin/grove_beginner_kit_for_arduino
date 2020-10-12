@@ -1,0 +1,46 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="53" x="13" y="38">
+    <next>
+      <block type="initializes_loop" id="54">
+        <statement name="CONTENT">
+          <block type="variables_set" id="480" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">Value</field>
+            <value name="VALUE">
+              <block type="math_map_int" id="437" inline="false">
+                <field name="FROMLOW">0</field>
+                <field name="FROMHIGH">1023</field>
+                <field name="TOLOW">0</field>
+                <field name="TOHIGH">255</field>
+                <value name="VALUE">
+                  <block type="rotaryRead" id="516" inline="true">
+                    <value name="pin">
+                      <block type="math_number" id="517">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="buzzer_tone_pwm" id="457" inline="true">
+                <value name="pin">
+                  <block type="math_number" id="458">
+                    <field name="NUM">5</field>
+                  </block>
+                </value>
+                <value name="pwm">
+                  <block type="variables_get" id="523">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">Value</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

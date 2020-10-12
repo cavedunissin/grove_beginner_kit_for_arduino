@@ -1,0 +1,26 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1" x="80" y="40">
+    <next>
+      <block type="initializes_loop" id="2">
+        <statement name="CONTENT">
+          <block type="serial_println" id="38" inline="false">
+            <value name="CONTENT">
+              <block type="text" id="39">
+                <field name="TEXT">Hello World</field>
+              </block>
+            </value>
+            <next>
+              <block type="delay_custom" id="51" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="52">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

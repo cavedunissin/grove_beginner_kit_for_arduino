@@ -1,0 +1,52 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="53" x="63" y="38">
+    <next>
+      <block type="initializes_loop" id="54">
+        <statement name="CONTENT">
+          <block type="controls_if" id="86" inline="false">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="130" inline="true">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="buttonRead" id="79" inline="true">
+                    <value name="pin">
+                      <block type="math_number" id="80">
+                        <field name="NUM">6</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="254">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="led_digital" id="55" inline="true">
+                <field name="mode">1</field>
+                <value name="pin">
+                  <block type="math_number" id="56">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="led_digital" id="255" inline="true">
+                <field name="mode">0</field>
+                <value name="pin">
+                  <block type="math_number" id="256">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

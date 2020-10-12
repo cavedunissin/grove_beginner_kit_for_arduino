@@ -1,0 +1,69 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="615" x="13" y="38">
+    <next>
+      <block type="initializes_loop" id="616">
+        <statement name="CONTENT">
+          <block type="variables_set" id="617" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">Value</field>
+            <value name="VALUE">
+              <block type="math_map_int" id="618" inline="false">
+                <field name="FROMLOW">0</field>
+                <field name="FROMHIGH">1023</field>
+                <field name="TOLOW">0</field>
+                <field name="TOHIGH">255</field>
+                <value name="VALUE">
+                  <block type="lightRead" id="640" inline="true">
+                    <value name="pin">
+                      <block type="math_number" id="641">
+                        <field name="NUM">6</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="781" inline="false">
+                <value name="CONTENT">
+                  <block type="lightRead" id="783" inline="true">
+                    <value name="pin">
+                      <block type="math_number" id="784">
+                        <field name="NUM">6</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="led_analog" id="698" inline="true">
+                    <value name="pin">
+                      <block type="math_number" id="699">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                    <value name="pwm">
+                      <block type="math_arithmetic" id="711" inline="true">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <block type="math_number" id="700">
+                            <field name="NUM">255</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="716">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">Value</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

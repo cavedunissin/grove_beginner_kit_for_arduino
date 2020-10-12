@@ -1,0 +1,88 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="3" x="-62" y="63">
+    <next>
+      <block type="initializes_loop" id="4">
+        <statement name="CONTENT">
+          <block type="serial_print" id="10" inline="false">
+            <value name="CONTENT">
+              <block type="text" id="11">
+                <field name="TEXT">Pressure: </field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_print" id="12" inline="false">
+                <value name="CONTENT">
+                  <block type="airPressureRead" id="13" inline="true">
+                    <value name="pin">
+                      <block type="math_number" id="14">
+                        <field name="NUM">0x77</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_println" id="15" inline="false">
+                    <value name="CONTENT">
+                      <block type="text" id="16">
+                        <field name="TEXT">Pa</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_print" id="17" inline="false">
+                        <value name="CONTENT">
+                          <block type="text" id="18">
+                            <field name="TEXT">Altitude: </field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_print" id="19" inline="false">
+                            <value name="CONTENT">
+                              <block type="altitudeRead" id="20" inline="true">
+                                <value name="pin">
+                                  <block type="math_number" id="21">
+                                    <field name="NUM">0x77</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_println" id="22" inline="false">
+                                <value name="CONTENT">
+                                  <block type="text" id="23">
+                                    <field name="TEXT">m</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="serial_println" id="24" inline="false">
+                                    <value name="CONTENT">
+                                      <block type="text" id="25">
+                                        <field name="TEXT"></field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="delay_custom" id="26" inline="false">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="27">
+                                            <field name="NUM">1000</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

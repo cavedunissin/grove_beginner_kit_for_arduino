@@ -1,0 +1,74 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="862" x="13" y="63">
+    <next>
+      <block type="initializes_loop" id="863">
+        <statement name="CONTENT">
+          <block type="serial_println" id="981" inline="false">
+            <value name="CONTENT">
+              <block type="soundRead" id="983" inline="true">
+                <value name="pin">
+                  <block type="math_number" id="984">
+                    <field name="NUM">2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="902" inline="false">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="912" inline="true">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="soundRead" id="929" inline="true">
+                        <value name="pin">
+                          <block type="math_number" id="930">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="941">
+                        <field name="NUM">600</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="led_digital" id="895" inline="true">
+                    <field name="mode">1</field>
+                    <value name="pin">
+                      <block type="math_number" id="896">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id="961" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="962">
+                            <field name="NUM">100</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="led_digital" id="942" inline="true">
+                    <field name="mode">0</field>
+                    <value name="pin">
+                      <block type="math_number" id="943">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,46 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="568" x="13" y="38">
+    <next>
+      <block type="initializes_loop" id="569">
+        <statement name="CONTENT">
+          <block type="led_digital" id="570" inline="true">
+            <field name="mode">1</field>
+            <value name="pin">
+              <block type="math_number" id="571">
+                <field name="NUM">4</field>
+              </block>
+            </value>
+            <next>
+              <block type="delay_custom" id="572" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="573">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="led_digital" id="574" inline="true">
+                    <field name="mode">0</field>
+                    <value name="pin">
+                      <block type="math_number" id="575">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id="576" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="577">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

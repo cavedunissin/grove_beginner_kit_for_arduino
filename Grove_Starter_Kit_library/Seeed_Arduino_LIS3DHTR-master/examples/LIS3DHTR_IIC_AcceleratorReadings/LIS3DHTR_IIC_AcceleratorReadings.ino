@@ -1,23 +1,14 @@
 // This example shows the 3 axis acceleration.
-// if you use the software I2C to drive the sensor, you can uncommnet the define SOFTWAREWIRE which in LIS3DHTR.h.
-
 #include "LIS3DHTR.h"
-#ifdef SOFTWAREWIRE
-    #include <SoftwareWire.h>
-    SoftwareWire myWire(3, 2);
-    LIS3DHTR<SoftwareWire> LIS(I2C_MODE);//IIC
-    #define WIRE myWire
-#else
-    #include <Wire.h>
-    LIS3DHTR<TwoWire> LIS(I2C_MODE);//IIC
-    #define WIRE Wire
-#endif
-
+#include <Wire.h>
+LIS3DHTR<TwoWire> LIS; //IIC
+#define WIRE Wire
 
 void setup() {
     Serial.begin(115200);
     while (!Serial) {};
-    LIS.begin(WIRE); //IIC init
+    LIS.begin(WIRE); //IIC init dafault :0x18
+    //LIS.begin(WIRE, 0x19); //IIC init
     delay(100);
     //  LIS.setFullScaleRange(LIS3DHTR_RANGE_2G);
     //  LIS.setFullScaleRange(LIS3DHTR_RANGE_4G);
@@ -31,6 +22,7 @@ void setup() {
     //  LIS.setOutputDataRate(LIS3DHTR_DATARATE_200HZ);
     //  LIS.setOutputDataRate(LIS3DHTR_DATARATE_1_6KHZ);
     //  LIS.setOutputDataRate(LIS3DHTR_DATARATE_5KHZ);
+    LIS.setHighSolution(true); //High solution enable
 }
 void loop() {
     if (!LIS) {

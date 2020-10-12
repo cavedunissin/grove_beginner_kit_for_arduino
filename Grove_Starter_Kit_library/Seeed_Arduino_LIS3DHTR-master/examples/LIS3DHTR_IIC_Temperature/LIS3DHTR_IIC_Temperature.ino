@@ -3,14 +3,14 @@
 
 #include "LIS3DHTR.h"
 #ifdef SOFTWAREWIRE
-    #include <SoftwareWire.h>
-    SoftwareWire myWire(3, 2);
-    LIS3DHTR<SoftwareWire> LIS(I2C_MODE);//IIC
-    #define WIRE myWire
+  #include <SoftwareWire.h>
+  SoftwareWire myWire(3, 2);
+  LIS3DHTR<SoftwareWire> LIS;//IIC
+  #define WIRE myWire
 #else
-    #include <Wire.h>
-    LIS3DHTR<TwoWire> LIS(I2C_MODE);//IIC
-    #define WIRE Wire
+  #include <Wire.h>
+  LIS3DHTR<TwoWire> LIS;//IIC
+  #define WIRE Wire
 #endif
 
 

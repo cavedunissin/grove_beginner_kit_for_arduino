@@ -1,0 +1,119 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1029" x="-12" y="163">
+    <next>
+      <block type="initializes_loop" id="1030">
+        <statement name="CONTENT">
+          <block type="variables_set" id="1278" inline="true">
+            <field name="TYPE">Float</field>
+            <field name="VAR">temp</field>
+            <value name="VALUE">
+              <block type="dhtRead" id="1268" inline="true">
+                <field name="mode">Temperature</field>
+                <value name="pin">
+                  <block type="math_number" id="1269">
+                    <field name="NUM">3</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="1289" inline="true">
+                <field name="TYPE">Float</field>
+                <field name="VAR">humi</field>
+                <value name="VALUE">
+                  <block type="dhtRead" id="1290" inline="true">
+                    <field name="mode">Humidity</field>
+                    <value name="pin">
+                      <block type="math_number" id="1291">
+                        <field name="NUM">3</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="OLED_print" id="1227" inline="true">
+                    <value name="x">
+                      <block type="math_number" id="1228">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="y">
+                      <block type="math_number" id="1229">
+                        <field name="NUM">33</field>
+                      </block>
+                    </value>
+                    <value name="content">
+                      <block type="text_join" id="1419" inline="false">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="1298">
+                            <field name="TEXT">Temp:</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="variables_get" id="1421">
+                            <field name="TYPE">Float</field>
+                            <field name="VAR">temp</field>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="1355">
+                            <field name="TEXT">C</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="OLED_print" id="1356" inline="true">
+                        <value name="x">
+                          <block type="math_number" id="1357">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="y">
+                          <block type="math_number" id="1358">
+                            <field name="NUM">50</field>
+                          </block>
+                        </value>
+                        <value name="content">
+                          <block type="text_join" id="1359" inline="false">
+                            <mutation items="3"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="1360">
+                                <field name="TEXT">Humi:</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="variables_get" id="1361">
+                                <field name="TYPE">Float</field>
+                                <field name="VAR">humi</field>
+                              </block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="text" id="1362">
+                                <field name="TEXT">%</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="1409" inline="false">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="1410">
+                                <field name="NUM">200</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
